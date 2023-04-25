@@ -1,9 +1,5 @@
-﻿Implement create project module and class, add functionality to push todos to matching project
+﻿Added function to push todo to DOM and adjust date formatting with date-fns
 
-This commit adds a new module and class for creating projects, along with the ability to push todos to a matching project based on project title. Additionally, Webpack has been set up for the project to allow for bundling and basic testing has been performed on the createTodo and createProject classes.
+This commit adds a new function called `displayTodo` to the UI module that creates a new todo element and displays it in the main window. The function also uses the `format` function from date-fns to adjust the date format to "Wed 30 Apr" before displaying it.
 
-Changes made:
-- Added createProject module and class
-- Implemented addTodoToProject method in createProject class to push todos to matching project
-- Set up Webpack for the project
-- Performed basic testing on createTodo and createProject classes
+Additionally, this commit updates the necessary files to import and use the `displayTodo` function in the appropriate places.

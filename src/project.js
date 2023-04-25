@@ -1,7 +1,7 @@
 export class createProject { 
     constructor(projectTitle, dueDate) {
         this.projectTitle = projectTitle;
-        this.dueDate = dueDate;
+        this.dueDate = new Date(dueDate);
         this.projectTodoList = [];
         this.isComplete = false;
     }

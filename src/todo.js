@@ -5,7 +5,7 @@ export class createTodo extends createProject {
         super(projectTitle);
         this.title = title;
         this.description = description;
-        this.dueDate = dueDate;
+        this.dueDate = new Date(dueDate);
         this.notes = notes;
         this.priority = priority;
         this.isComplete = false;
