@@ -1,5 +1,8 @@
-export class createTodo {
-    constructor(title, description, dueDate, notes, priority) {
+import { createProject } from './project';
+
+export class createTodo extends createProject {
+    constructor(projectTitle, title, description, dueDate, notes, priority) {
+        super(projectTitle);
         this.title = title;
         this.description = description;
         this.dueDate = dueDate;
@@ -7,13 +10,4 @@ export class createTodo {
         this.priority = priority;
         this.isComplete = false;
     }
-
-    toggleCompletion() {
-        if (this.isComplete) {
-            this.isComplete = false;
-        } else {
-            this.isComplete = true;
-        }
-    }
 }
-

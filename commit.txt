@@ -1,0 +1,9 @@
+﻿Implement create project module and class, add functionality to push todos to matching project
+
+This commit adds a new module and class for creating projects, along with the ability to push todos to a matching project based on project title. Additionally, Webpack has been set up for the project to allow for bundling and basic testing has been performed on the createTodo and createProject classes.
+
+Changes made:
+- Added createProject module and class
+- Implemented addTodoToProject method in createProject class to push todos to matching project
+- Set up Webpack for the project
+- Performed basic testing on createTodo and createProject classes
