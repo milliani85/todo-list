@@ -9,5 +9,15 @@ export class createTodo extends createProject {
         this.notes = notes;
         this.priority = priority;
         this.isComplete = false;
+
+        if (!this.constructor.todos) {
+            this.constructor.todos = [];
+        }
+
+        this.constructor.todos.push(this);
+    }
+
+    static ArrayOfAllTodos() {
+        return this.todos;
     }
 }

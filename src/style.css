@@ -75,3 +75,65 @@ nav > h5 {
   color: rgb(95, 95, 95);
   padding: 40px 0 0 35px;
 }
+
+.todo-container {
+  width: 40%;
+  margin: 25px 0 25px 20px;
+  border-bottom: 2px solid rgb(14, 14, 117);
+  position: relative;
+}
+
+.todo-title {
+  font-weight: 300;
+  font-size: 1.1rem;
+  padding: 10px 0 10px 0;
+}
+
+.todo-description {
+  font-weight: 100;
+  font-size: 0.8rem;
+  color: rgb(129, 127, 127);
+  padding-bottom: 20px;
+}
+
+/* .todo-priority {
+  padding: 10px 0 5px 0;
+  font-weight: 100;
+  font-size: 0.8rem;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+} */
+
+.todo-is-complete {
+  display: inline-flex;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  margin-right: 10px;
+  border: 2px solid;
+  box-sizing: border-box;
+}
+
+.high-priority {
+  border-color: red;
+}
+
+.medium-priority {
+  border-color: orange;
+}
+
+.low-priority {
+  border-color: blue;
+}
+
+.todo-is-complete:hover {
+  border: 2px solid green;
+  background-color: green;
+}
+
+.upper-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

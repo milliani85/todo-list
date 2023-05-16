@@ -2,25 +2,17 @@ import { createProject } from "./project";
 import { createTodo } from "./todo";
 import { displayTodo } from "./ui";
 
-const todo1 = new createTodo('Complete course', 'Complete module', 'Occaecat cupidatat reprehenderit enim et incididunt nostrud qui anim.', '2023-04-30', 'kokookkokok', 'High');
-console.log(todo1);
-todo1.toggleCompletion();
-console.log(todo1);
-
-todo1.projectTitle = 'new';
-console.log(todo1);
+const todo1 = new createTodo('Complete course', 'Finish this study module', 'Finish module and upload to git. Once uploaded to git display on Odin site. Once uploaded to git display on Odin site. Once uploaded to git display on Odin site. Once uploaded to git display on Odin site. ', '2023-06-30', 'kokookkokok', 'High');
+const todo2 = new createTodo('Complete course', 'Learn Guitar', 'Practice finger style', '2023-07-30', 'kokookkokok', 'Medium');
+const todo3 = new createTodo('Complete course', 'Cut Grass', 'Cut grass in back garden', '2023-09-20', 'kokookkokok', 'Low');
 
 const project1 = new createProject('Hello', 12032021);
-console.log(project1);
-
-
 project1.addTodoToProject(todo1);
-console.log(project1)
-
 todo1.projectTitle = 'Hello';
 
-project1.addTodoToProject(todo1);
-console.log(project1)
-console.table(project1.projectTodoList);
+
 
 displayTodo(todo1);
+displayTodo(todo1);
+displayTodo(todo2);
+displayTodo(todo3);

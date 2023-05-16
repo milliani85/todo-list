@@ -1,5 +1,5 @@
-﻿Added function to push todo to DOM and adjust date formatting with date-fns
+﻿Add styling, priority color, and complete functionality to displayTodo
 
-This commit adds a new function called `displayTodo` to the UI module that creates a new todo element and displays it in the main window. The function also uses the `format` function from date-fns to adjust the date format to "Wed 30 Apr" before displaying it.
-
-Additionally, this commit updates the necessary files to import and use the `displayTodo` function in the appropriate places.
+- Added styling to the displayTodo function for better visual presentation of todo items.
+- Implemented a function that changes the color of the complete todo button based on the priority of the todo item.
+- Added an option to click the complete todo button, which triggers the removal of the todo item.
