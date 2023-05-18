@@ -1,6 +1,8 @@
 import { createProject } from "./project";
 import { createTodo } from "./todo";
-import { displayTodo } from "./ui";
+import { displayTodo, displayTodoForm } from "./ui";
+
+displayTodoForm();
 
 const todo1 = new createTodo('Complete course', 'Finish this study module', 'Finish module and upload to git. Once uploaded to git display on Odin site. Once uploaded to git display on Odin site. Once uploaded to git display on Odin site. Once uploaded to git display on Odin site. ', '2023-06-30', 'kokookkokok', 'High');
 const todo2 = new createTodo('Complete course', 'Learn Guitar', 'Practice finger style', '2023-07-30', 'kokookkokok', 'Medium');
@@ -12,7 +14,15 @@ todo1.projectTitle = 'Hello';
 
 
 
-displayTodo(todo1);
-displayTodo(todo1);
-displayTodo(todo2);
-displayTodo(todo3);
+// displayTodo(todo1);
+// displayTodo(todo1);
+// displayTodo(todo2);
+// displayTodo(todo3);
+// displayTodo(todo1);
+// displayTodo(todo1);
+// displayTodo(todo2);
+// displayTodo(todo3);
+// displayTodo(todo1);
+// displayTodo(todo1);
+// displayTodo(todo2);
+// displayTodo(todo3);

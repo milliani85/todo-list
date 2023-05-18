@@ -1,5 +1,5 @@
-﻿Add styling, priority color, and complete functionality to displayTodo
+﻿Add a basic form to create a todo and toggle form display
 
-- Added styling to the displayTodo function for better visual presentation of todo items.
-- Implemented a function that changes the color of the complete todo button based on the priority of the todo item.
-- Added an option to click the complete todo button, which triggers the removal of the todo item.
+Added a basic form for creating a new todo item. The form includes necessary fields such as title, description, and due date. Additionally, a button has been added to the navigation bar that toggles the display of the form, allowing users to show or hide the form as needed.
+
+This commit introduces the initial setup and UI components for creating todos and provides the ability to control the visibility of the form.
