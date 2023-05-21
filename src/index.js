@@ -26,7 +26,4 @@ console.log(createTodo.todos);
 // displayTodo(todo3);
 // displayTodo(todo1);
 // displayTodo(todo1);
-// displayTodo(todo2);
-// displayTodo(todo3);
-// displayTodo(todo1);
-// displayTodo(todo1);
+

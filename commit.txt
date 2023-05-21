@@ -1,5 +1,14 @@
-﻿Add a basic form to create a todo and toggle form display
+﻿Fix todo form not closing and add form handling module
 
-Added a basic form for creating a new todo item. The form includes necessary fields such as title, description, and due date. Additionally, a button has been added to the navigation bar that toggles the display of the form, allowing users to show or hide the form as needed.
+This commit addresses the following issues:
 
-This commit introduces the initial setup and UI components for creating todos and provides the ability to control the visibility of the form.
+- Fixed the issue where the todo form was not closing after submitting the form.
+- Added a new module for handling the todo form and processing the form data.
+- The form handling module includes logic to run the createTodo constructor with the form data.
+
+Changes Made:
+- Modified the displayTodoForm function to ensure the form closes after form submission.
+- Created a new module for form handling with the necessary logic to process the todo form data.
+- Updated the dependencies and imports to include the form handling module.
+
+
