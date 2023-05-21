@@ -6,6 +6,11 @@
   box-sizing: border-box;
 }
 
+:root {
+  --blue: rgb(14, 14, 117);
+  --grey: rgb(238, 238, 238);
+}
+
 body {
   font-family: "Roboto", sans-serif;
   display: grid;
@@ -15,7 +20,7 @@ body {
 
 header {
   grid-row: 1;
-  background-color: rgb(14, 14, 117);
+  background-color: var(--blue);
   color: white;
   display: flex;
   padding: 20px;
@@ -37,12 +42,12 @@ header > img {
 
 nav {
   grid-column: 1/2;
-  background-color: rgb(238, 238, 238);
+  background-color: var(--grey);
 }
 
 footer {
   grid-row: 3;
-  background-color: rgb(14, 14, 117);
+  background-color: var(--blue);
   color: white;
   text-align: center;
   padding: 10px;
@@ -103,7 +108,7 @@ nav > h5 {
 .todo-container {
   width: 60%;
   margin: 20px auto;
-  border-bottom: 2px solid rgb(14, 14, 117);
+  border-bottom: 2px solid var(--blue);
   position: relative;
 }
 
@@ -160,6 +165,8 @@ nav > h5 {
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 2;
+  border: solid 2px var(--blue);
+  background-color: white;
 }
 
 .input-container {
@@ -179,4 +186,13 @@ nav > h5 {
 
 .form-hidden {
   display: none;
+}
+
+.form-container input {
+  background-color: var(--grey);
+  outline: none;
+  border: none;
+  padding: 10px;
+  margin-bottom: 20px;
+  color: var(--platinum);
 }

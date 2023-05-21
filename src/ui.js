@@ -1,4 +1,5 @@
 import { format } from 'date-fns';
+import { createTodo } from './todo';
 
 function displayTodo(todo) {
     const mainContainer = document.querySelector('.main-section');
@@ -71,14 +72,33 @@ function displayTodo(todo) {
 
 // Toggles todo form display on and off.
 function displayTodoForm() {
-    const createTodo = document.querySelector('.create-todo-container');
+    const createTodoButton = document.querySelector('.create-todo-container');
     const overlay = document.querySelector('.overlay');
     const formContainer = document.querySelector('.create-todo-form-container');
+    const formSubmit = document.querySelector('#todo-form-submit')
 
-    createTodo.addEventListener('click', () => {
+    createTodoButton.addEventListener('click', () => {
         formContainer.classList.toggle('form-hidden')
         overlay.classList.toggle('overlay-on')
     });
+
+    overlay.addEventListener('click', (e) => {
+        if (e.target.classList.contains('overlay-on')) {
+            formContainer.classList.add('form-hidden');
+            overlay.classList.toggle('overlay-on');
+        }        
+    });
+
+    formSubmit.addEventListener('click', () => {
+        formContainer.classList.add('form-hidden');
+        overlay.classList.toggle('overlay-on');
+    })
 }
 
-export { displayTodo, displayTodoForm };
+function displayAllTodos() {
+    createTodo.todos.forEach((todo) => {
+        displayTodo(todo);
+    });
+}
+
+export { displayTodo, displayTodoForm, displayAllTodos };
