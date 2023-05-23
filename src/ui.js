@@ -16,10 +16,10 @@ function displayTodo(todo) {
     const isComplete = document.createElement('span');
     isComplete.classList.add('todo-is-complete');
     isComplete.setAttribute('title', 'Click to complete');
-    isComplete.addEventListener('click', () => {
-        todoContainer.remove();
-        });
     upperContainer.appendChild(isComplete);
+    isComplete.addEventListener('click', () => {
+        removeTodo(todo, todoContainer);
+    });
     
     // Create a time element to display the due date of the todo
     const todoDueDate = document.createElement('time');
@@ -68,7 +68,17 @@ function displayTodo(todo) {
     // todoProject.textContent = todo.projectTitle;
     // todoContainer.appendChild(todoProject);
     
-}    
+} 
+
+// Removes todo from display and the todos array
+function removeTodo(todo, todoContainer) {
+    const index = createTodo.todos.indexOf(todo);
+    if (index !== -1) {
+        createTodo.todos.splice(index, 1);
+    }
+    todoContainer.remove();
+}
+
 
 // Toggles todo form display on and off.
 function displayTodoForm() {
@@ -95,6 +105,7 @@ function displayTodoForm() {
     })
 }
 
+//Iterates through the todos array and calls displayTodo for each one.
 function displayAllTodos() {
     createTodo.todos.forEach((todo) => {
         displayTodo(todo);

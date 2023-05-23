@@ -1,14 +1,10 @@
-﻿Fix todo form not closing and add form handling module
+﻿Add removeTodo function to remove a todo from the todos array and display
 
-This commit addresses the following issues:
+This commit introduces the removeTodo function, which allows removing a todo from the todos array and also removes it from the display. The function performs the following tasks:
 
-- Fixed the issue where the todo form was not closing after submitting the form.
-- Added a new module for handling the todo form and processing the form data.
-- The form handling module includes logic to run the createTodo constructor with the form data.
+- Removes the todo from the todos array by finding its index using `indexOf` and splicing it using `splice`.
+- Removes the todo from the display by removing its corresponding DOM element using the `remove` method.
 
-Changes Made:
-- Modified the displayTodoForm function to ensure the form closes after form submission.
-- Created a new module for form handling with the necessary logic to process the todo form data.
-- Updated the dependencies and imports to include the form handling module.
+The removeTodo function provides a convenient way to delete todos from the application, ensuring consistency between the todos array and the user interface.
 
 
