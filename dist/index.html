@@ -27,8 +27,9 @@
         <main class="main-section">
             <div class="create-todo-form-container form-hidden">
                 <form id="create-todo-form">
+                    <h3>CREATE TODO</h3>
                     <div class="input-container">
-                        <label for="project-title">Project Title:</label>
+                        <label for="project-title">PROJECT TITLE</label>
                         <select id="project-title" name="project-title">
                             <option value="Project 1">Project 1</option>
                             <option value="Project 2">Project 2</option>
@@ -37,39 +38,40 @@
                     </div>
                     <br><br>
                     <div class="input-container">
-                        <label for="todo-title">Title:</label>
+                        <label for="todo-title">*TITLE</label>
                         <input type="text" id="todo-title" name="todo-title" required>
                     </div>
                     <br><br>
                     <div class="input-container">
-                        <label for="todo-description">Description:</label>
-                        <textarea id="todo-description" name="todo-description" required></textarea>
+                        <label for="todo-description">DESCRIPTION</label>
+                        <textarea id="todo-description" name="todo-description"></textarea>
                     </div>
                     <br><br>
                     <div class="input-container">
-                        <label for="todo-due-date">Due Date:</label>
+                        <label for="todo-due-date">*DUE DATE</label>
                         <input type="date" id="todo-due-date" name="todo-due-date" required>
                     </div>
                     <br><br>
                     <div class="input-container">
-                        <label for="todo-notes">Notes:</label>
+                        <label for="todo-notes">NOTES</label>
                         <textarea id="todo-notes" name="todo-notes"></textarea>
                     </div>
                     <br><br>
                 
                     <div class="priority-selection-container">
-                        <label for="priority">Priority:</label>
-                        <input type="radio" id="high" name="priority" value="High">
-                        <label for="high" style="background-color: #ff0000;"></label>
-                
+                        <label for="priority">*PRIORITY</label>
+        
+                        <input type="radio" id="high" name="priority" value="High" required>
+                        <label for="high"></label>
+                        
+                        
                         <input type="radio" id="medium" name="priority" value="Medium">
-                        <label for="medium" style="background-color: #00ff00;"></label>
-                
+                        <label for="medium"></label>
                         <input type="radio" id="low" name="priority" value="Low">
-                        <label for="low" style="background-color: #0000ff;"></label>
+                        <label for="low"></label>
                     </div>
                     <br><br>            
-                    <input type="submit" value="Create Todo" id="todo-form-submit">
+                    <input type="submit" value="CREATE TODO" id="todo-form-submit">
                 </form>
             </div>
         </main>

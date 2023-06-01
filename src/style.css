@@ -165,8 +165,10 @@ nav > h5 {
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 2;
-  border: solid 2px var(--blue);
+  border: solid 0.5px rgb(94, 94, 94);
+  border-radius: 15px;
   background-color: white;
+  padding: 20px;
 }
 
 .input-container {
@@ -195,4 +197,126 @@ nav > h5 {
   padding: 10px;
   margin-bottom: 20px;
   color: var(--platinum);
+}
+
+#create-todo-form h3 {
+  font-weight: 300;
+  letter-spacing: 0.8px;
+  padding-bottom: 10px;
+  text-align: center;
+}
+
+.input-container > label {
+  font-size: 0.8rem;
+  color: rgb(43, 42, 42);
+  padding-bottom: 2px;
+}
+
+.input-container input[type="text"] {
+  padding: 7px;
+  border: none;
+  border-radius: 5px;
+  background-color: rgb(245, 243, 243);
+  font-size: 1rem;
+}
+
+.input-container textarea {
+  padding: 7px;
+  border: none;
+  border-radius: 5px;
+  background-color: rgb(245, 243, 243);
+  font-size: 1rem;
+  resize: none;
+}
+
+#project-title {
+  padding: 7px;
+  border: none;
+  border-radius: 5px;
+  background-color: rgb(245, 243, 243);
+  font-size: 1rem;
+}
+
+.input-container input[type="date"] {
+  padding: 7px;
+  border: none;
+  border-radius: 5px;
+  background-color: rgb(245, 243, 243);
+  font-size: 1rem;
+}
+
+.priority-selection-container {
+  display: flex;
+  align-items: center;
+}
+
+.priority-selection-container label[for="priority"] {
+  font-size: 0.8rem;
+  color: rgb(43, 42, 42);
+  padding-bottom: 2px;
+  margin-right: 15px;
+  margin-top: 5px;
+}
+
+.input-container.priority-selection-container label {
+  margin-right: 10px;
+}
+
+.priority-selection-container input[type="radio"] {
+  display: none;
+}
+
+.priority-selection-container label[for="high"],
+.priority-selection-container label[for="medium"],
+.priority-selection-container label[for="low"] {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  cursor: pointer;
+  position: relative;
+  margin-left: 5px;
+}
+
+.priority-selection-container label[for="high"]::after,
+.priority-selection-container label[for="medium"]::after,
+.priority-selection-container label[for="low"]::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: currentColor;
+  display: none;
+}
+
+.priority-selection-container input[type="radio"]:checked + label::after {
+  display: block;
+}
+
+.priority-selection-container label[for="high"] {
+  border: solid 2px red;
+}
+
+.priority-selection-container label[for="medium"] {
+  border: solid 2px green;
+}
+
+.priority-selection-container label[for="low"] {
+  border: solid 2px blue;
+}
+
+#todo-form-submit {
+  background-color: var(--blue);
+  color: white;
+  font-weight: bold;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 0 auto;
+  display: block;
 }
