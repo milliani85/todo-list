@@ -1,11 +1,12 @@
 import { createTodo } from './todo';
 import { displayAllTodos } from './ui';
+import { createProject } from './project';
 
 function attachTodoFormListener() {
     function processTodoFormData(event) {
         event.preventDefault();
 
-        const projectTitle = document.querySelector('#project-title').value;
+        const projectTitle = document.querySelector('#todo-project-title').value;
         const todoTitle = document.querySelector('#todo-title').value;
         const todoDescription = document.querySelector('#todo-description').value;
         const todoDueDate = document.querySelector('#todo-due-date').value;
@@ -19,4 +20,18 @@ function attachTodoFormListener() {
     submitTodoForm.addEventListener('submit', processTodoFormData);
 }
 
-export { attachTodoFormListener };
+function attachProjectFormListener() {
+    function processProjectFormData(event) {
+        event.preventDefault();
+
+        const projectTitle = document.querySelector('#project-title').value;
+        const projectDueDate = document.querySelector('#project-due-date').value;
+
+        new createProject(projectTitle, projectDueDate);
+    }
+    const submitProjectForm = document.querySelector('#create-project-form');
+    submitProjectForm.addEventListener('submit', processProjectFormData);
+}
+
+
+export { attachTodoFormListener, attachProjectFormListener };

@@ -1,3 +1,11 @@
-﻿Completed styling for the create todo form. Pending functionality to disable the create todo button when required inputs are empty and also add hover styling. The Project dropdown will be dynamically populated with created projects or remain blank if none exist.
+﻿
+    • Styled the project form to improve its visual appearance and layout
+    • Fixed the issue where the form wouldn't close when clicking on the overlay, ensuring proper functionality.
+    • Implemented a fade-in animation for the form, providing a smooth transition when it appears on the screen.
+    • Enabled the createProject functionality, allowing users to add new projects with a specified title and due date.
+    • Created an array of all projects, capturing and storing every new project added to the system.
+    • The array of all projects enables easy access to project data for further processing and display.
+
+
 
 

@@ -1,5 +1,6 @@
 import { format } from 'date-fns';
 import { createTodo } from './todo';
+import { createProject } from './project'
 
 function displayTodo(todo) {
     const mainContainer = document.querySelector('.main-section');
@@ -83,25 +84,49 @@ function removeTodo(todo, todoContainer) {
 // Toggles todo form display on and off.
 function displayTodoForm() {
     const createTodoButton = document.querySelector('.create-todo-container');
-    const overlay = document.querySelector('.overlay');
+    const todoOverlay = document.querySelector('#todo-overlay');
     const formContainer = document.querySelector('.create-todo-form-container');
     const formSubmit = document.querySelector('#todo-form-submit')
 
     createTodoButton.addEventListener('click', () => {
         formContainer.classList.toggle('form-hidden')
-        overlay.classList.toggle('overlay-on')
+        todoOverlay.classList.toggle('overlay-on')
     });
 
-    overlay.addEventListener('click', (e) => {
+    todoOverlay.addEventListener('click', (e) => {
         if (e.target.classList.contains('overlay-on')) {
             formContainer.classList.add('form-hidden');
-            overlay.classList.toggle('overlay-on');
+            todoOverlay.classList.toggle('overlay-on');
         }        
     });
 
     formSubmit.addEventListener('click', () => {
         formContainer.classList.add('form-hidden');
-        overlay.classList.toggle('overlay-on');
+        todoOverlay.classList.toggle('overlay-on');
+    })
+}
+
+function displayProjectForm() {
+    const createProjectButton = document.querySelector(".create-project-container");
+    const projectOverlay = document.querySelector('#project-overlay');
+    const formContainer = document.querySelector('.create-project-form-container');
+    const formSubmit = document.querySelector('#project-form-submit');
+
+    createProjectButton.addEventListener('click', () => {
+        formContainer.classList.toggle('form-hidden')
+        projectOverlay.classList.toggle('overlay-on')
+    });
+
+    projectOverlay.addEventListener('click', (e) => {
+        if (e.target.classList.contains('overlay-on')) {
+            formContainer.classList.add('form-hidden');
+            projectOverlay.classList.toggle('overlay-on');            
+        }        
+    });
+
+    formSubmit.addEventListener('click', () => {
+        formContainer.classList.add('form-hidden');
+        projectOverlay.classList.toggle('overlay-on');
     })
 }
 
@@ -112,4 +137,4 @@ function displayAllTodos() {
     });
 }
 
-export { displayTodo, displayTodoForm, displayAllTodos };
+export { displayTodo, displayTodoForm, displayAllTodos, displayProjectForm };
