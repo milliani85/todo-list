@@ -137,4 +137,37 @@ function displayAllTodos() {
     });
 }
 
-export { displayTodo, displayTodoForm, displayAllTodos, displayProjectForm };
+function displayProject(project) {
+    const projectsContainer = document.querySelector('.all-projects-container');
+
+    const projectList = document.createElement('li');
+    projectList.classList.add('project-list');
+    projectList.textContent = project.projectTitle;
+    projectsContainer.appendChild(projectList);
+}
+
+function addProjectsTodoForm(project) {
+    const projectTitleSelect = document.getElementById('todo-project-title');
+    
+    const option = document.createElement('option');
+    option.value = project.projectTitle;
+    option.textContent = project.projectTitle;
+
+    projectTitleSelect.appendChild(option);
+}
+
+//Iterates through the projects array and calls displayProject for each one.
+function displayAllProjects() {
+    const projectsContainer = document.querySelector('.all-projects-container');
+    const projectTitleSelect = document.getElementById('todo-project-title');
+
+    projectsContainer.innerHTML = '';
+    projectTitleSelect.innerHTML = '';
+
+    createProject.projects.forEach((project) => {
+        displayProject(project)
+        addProjectsTodoForm(project)
+    })
+}
+
+export { displayTodo, displayTodoForm, displayAllTodos, displayProjectForm, displayAllProjects };

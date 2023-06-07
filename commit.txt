@@ -1,11 +1,10 @@
-﻿
-    • Styled the project form to improve its visual appearance and layout
-    • Fixed the issue where the form wouldn't close when clicking on the overlay, ensuring proper functionality.
-    • Implemented a fade-in animation for the form, providing a smooth transition when it appears on the screen.
-    • Enabled the createProject functionality, allowing users to add new projects with a specified title and due date.
-    • Created an array of all projects, capturing and storing every new project added to the system.
-    • The array of all projects enables easy access to project data for further processing and display.
+﻿Added functionality to display all projects in a list on the side nav
+- Created a new function, displayAllProjects, that iterates through the projects array and adds each project to the side nav as a list item.
+- Updated the displayProject function to add projects to the side nav list.
 
-
+Added function to populate project select dropdown in the todo form
+- Modified the displayAllProjects function to also populate the project select dropdown in the todo form with all created projects.
+- Each project is added as an option element with the project title as both the value and the displayed text.
+This enhances the user interface by providing a visual representation of all created projects in the side nav and allows users to select a project from the dropdown when creating a new todo.
 
 

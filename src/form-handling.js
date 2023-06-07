@@ -1,5 +1,5 @@
 import { createTodo } from './todo';
-import { displayAllTodos } from './ui';
+import { displayAllTodos, displayAllProjects } from './ui';
 import { createProject } from './project';
 
 function attachTodoFormListener() {
@@ -28,6 +28,8 @@ function attachProjectFormListener() {
         const projectDueDate = document.querySelector('#project-due-date').value;
 
         new createProject(projectTitle, projectDueDate);
+        console.log(createProject.projects);
+        displayAllProjects();
     }
     const submitProjectForm = document.querySelector('#create-project-form');
     submitProjectForm.addEventListener('submit', processProjectFormData);
