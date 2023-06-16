@@ -126,6 +126,7 @@ footer {
   font-size: 0.8rem;
   color: rgb(129, 127, 127);
   padding-bottom: 20px;
+  padding-top: 10px;
 }
 
 .todo-is-complete {
@@ -282,7 +283,7 @@ footer {
   width: 20px;
   height: 20px;
   border-radius: 50%;
-  cursor: pointer;
+  /* cursor: pointer; */
   position: relative;
   margin-left: 5px;
 }
@@ -311,7 +312,7 @@ footer {
 }
 
 .priority-selection-container label[for="medium"] {
-  border: solid 2px green;
+  border: solid 2px orange;
 }
 
 .priority-selection-container label[for="low"] {
@@ -366,4 +367,11 @@ footer {
   list-style-position: inside;
   margin-left: 50px;
   margin-top: 20px;
+  transform-origin: left center;
+  transition: transform 0.2s ease-in-out;
+}
+
+.project-list:hover {
+  transform: scale(1.1);
+  cursor: pointer;
 }

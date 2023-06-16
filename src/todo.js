@@ -1,15 +1,8 @@
-import { createProject } from "./project";
-
-class createTodo extends createProject {
+class createTodo {
     static todos = [];
-
-      // Static method that returns an array of all createTodo instances
-    // static arrayOfAllTodos() {
-    //     return this.todos;
-    // }    
-
-    constructor(projectTitle, title, description, dueDate, notes, priority) {
-        super(projectTitle);
+  
+    constructor(todoProject, title, description, dueDate, notes, priority) {
+        this.todoProject = todoProject;
         this.title = title;
         this.description = description;
         this.dueDate = new Date(dueDate);

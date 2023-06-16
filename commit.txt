@@ -1,10 +1,8 @@
-﻿Added functionality to display all projects in a list on the side nav
-- Created a new function, displayAllProjects, that iterates through the projects array and adds each project to the side nav as a list item.
-- Updated the displayProject function to add projects to the side nav list.
-
-Added function to populate project select dropdown in the todo form
-- Modified the displayAllProjects function to also populate the project select dropdown in the todo form with all created projects.
-- Each project is added as an option element with the project title as both the value and the displayed text.
-This enhances the user interface by providing a visual representation of all created projects in the side nav and allows users to select a project from the dropdown when creating a new todo.
+﻿Fixed bug causing duplicated projects with assigned todos and added Project list styling and filtering functionality
 
 
+-Resolved bug that caused duplication of projects with assigned todos in the array of all projects and on the display.
+
+-Implemented styling for the Project list in the navigation bar, enhancing the visual presentation.
+
+-Developed functionality to enable clicking on a project in the Project list, resulting in filtered todos being displayed in the main todo area.

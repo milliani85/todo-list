@@ -1,9 +1,5 @@
-export class createProject { 
+class createProject { 
     static projects = [];
-
-    static arrayOfAllProjects() {
-        return this.projects;
-    }  
 
     constructor(projectTitle, dueDate) {
         this.projectTitle = projectTitle;
@@ -28,3 +24,5 @@ export class createProject {
         }
     }
 }
+
+export { createProject };

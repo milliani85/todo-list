@@ -80,6 +80,14 @@ function removeTodo(todo, todoContainer) {
     todoContainer.remove();
 }
 
+function clearTodos() {
+  const todoContainers = document.querySelectorAll('.todo-container');
+
+  todoContainers.forEach((container) => {
+    container.remove();
+  });
+}
+
 
 // Toggles todo form display on and off.
 function displayTodoForm() {
@@ -93,8 +101,8 @@ function displayTodoForm() {
         todoOverlay.classList.toggle('overlay-on')
     });
 
-    todoOverlay.addEventListener('click', (e) => {
-        if (e.target.classList.contains('overlay-on')) {
+    todoOverlay.addEventListener('click', (event) => {
+        if (event.target.classList.contains('overlay-on')) {
             formContainer.classList.add('form-hidden');
             todoOverlay.classList.toggle('overlay-on');
         }        
@@ -106,6 +114,7 @@ function displayTodoForm() {
     })
 }
 
+// Toggles project form display on and off.
 function displayProjectForm() {
     const createProjectButton = document.querySelector(".create-project-container");
     const projectOverlay = document.querySelector('#project-overlay');
@@ -130,13 +139,21 @@ function displayProjectForm() {
     })
 }
 
-//Iterates through the todos array and calls displayTodo for each one.
+// Iterates through the todos array and calls displayTodo for each one.
 function displayAllTodos() {
+    clearTodos();
+
     createTodo.todos.forEach((todo) => {
         displayTodo(todo);
     });
 }
 
+function mainListButton() {
+    const mainListButton = document.querySelector('.main-list-container');
+    mainListButton.addEventListener('click', displayAllTodos)
+}
+
+// Displays projects on the side nav bar.
 function displayProject(project) {
     const projectsContainer = document.querySelector('.all-projects-container');
 
@@ -146,17 +163,34 @@ function displayProject(project) {
     projectsContainer.appendChild(projectList);
 }
 
+// Adds projects to todo form projects selector.
 function addProjectsTodoForm(project) {
     const projectTitleSelect = document.getElementById('todo-project-title');
-    
+
     const option = document.createElement('option');
     option.value = project.projectTitle;
     option.textContent = project.projectTitle;
-
     projectTitleSelect.appendChild(option);
 }
 
-//Iterates through the projects array and calls displayProject for each one.
+function attachProjectEventListeners() {
+    const projectListItems = document.querySelectorAll('.project-list');
+    projectListItems.forEach((project) => {
+        project.addEventListener('click', (event) => {
+            clearTodos();
+            const selectedProject = event.target.innerText;
+
+            const matchingTodos = createTodo.todos.filter((todo) => {
+                return selectedProject === todo.todoProject
+            })
+            matchingTodos.forEach((todo) => {
+                displayTodo(todo)
+            })
+        });        
+    });
+};
+
+// Iterates through the projects array and calls displayProject and addProjectsTodoForm for each one.
 function displayAllProjects() {
     const projectsContainer = document.querySelector('.all-projects-container');
     const projectTitleSelect = document.getElementById('todo-project-title');
@@ -164,10 +198,18 @@ function displayAllProjects() {
     projectsContainer.innerHTML = '';
     projectTitleSelect.innerHTML = '';
 
+    const blankOption = document.createElement('option');
+    blankOption.value = '';
+    blankOption.textContent = '';
+    projectTitleSelect.appendChild(blankOption);
+
     createProject.projects.forEach((project) => {
         displayProject(project)
         addProjectsTodoForm(project)
     })
+
+    attachProjectEventListeners()
 }
 
-export { displayTodo, displayTodoForm, displayAllTodos, displayProjectForm, displayAllProjects };
+
+export { displayTodo, displayTodoForm, displayAllTodos, displayProjectForm, displayAllProjects, mainListButton };
