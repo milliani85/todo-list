@@ -53,23 +53,95 @@ function displayTodo(todo) {
     }
 
     priorityColor();
+    expandTodo(todoContainer);
 
-    // const priority = document.createElement('h2');
-    // priority.classList.add('todo-priority');
-    // priority.textContent = todo.priority;
-    // todoContainer.appendChild(priority);
-
-    // const todoNotes = document.createElement('p');
-    // todoNotes.classList.add('todo-notes');
-    // todoNotes.textContent = todo.notes;
-    // todoContainer.appendChild(todoNotes);
-
-     // const todoProject = document.createElement('h1');
-    // todoProject.classList.add('todo-project');
-    // todoProject.textContent = todo.projectTitle;
-    // todoContainer.appendChild(todoProject);
-    
 } 
+
+function createExpandedTodo(expandedTodo, todo, todoOverlay) {
+    expandedTodo.innerHTML = '';
+
+    const todoProject = document.createElement('h1');
+    todoProject.classList.add('todo-project');
+    todoProject.textContent = todo.todoProject;
+    expandedTodo.appendChild(todoProject);
+
+    const todoDueDate = document.createElement('input');
+    todoDueDate.classList.add('todo-due-date');
+    todoDueDate.setAttribute('type', 'date');
+    todoDueDate.value = todo.dueDate.toISOString().split('T')[0];
+    expandedTodo.appendChild(todoDueDate);
+
+    const todoTitle = document.createElement('h2');
+    todoTitle.classList.add('todo-title');
+    todoTitle.contentEditable = true;
+    todoTitle.textContent = todo.title;
+    expandedTodo.appendChild(todoTitle);
+
+    const todoDescription = document.createElement('p');
+    todoDescription.classList.add('todo-description');
+    todoDescription.textContent = todo.description;
+    expandedTodo.appendChild(todoDescription);
+
+    const todoNotes = document.createElement('p');
+    todoNotes.classList.add('todo-notes');
+    todoNotes.textContent = todo.notes;
+    expandedTodo.appendChild(todoNotes);
+
+    const submitButton = document.createElement('button');
+    submitButton.classList.add('submit-button');
+    submitButton.textContent = 'APPLY';
+    expandedTodo.appendChild(submitButton);
+
+    const previousTitle = todoTitle.textContent;
+
+    submitButton.addEventListener('click', () => {
+        const newTodoTitle = todoTitle.textContent.trim();
+        
+        createTodo.todos.forEach((todo) => {
+            console.log(todo.title)
+            console.log(todoTitle.textContent)
+
+            if (todo.title === previousTitle) {
+                todo.title = newTodoTitle;
+                console.log(createTodo.todos)
+            }
+        });
+        displayAllTodos();
+
+        expandedTodo.classList.toggle('expanded-todo-hidden');
+        todoOverlay.classList.toggle('overlay-on');    
+    })
+}
+
+// Opens expanded todo
+function expandTodo(todoContainer) {
+    const todoOverlay = document.querySelector('#expanded-todo-overlay');
+    const expandedTodo = document.querySelector('.expanded-todo');
+
+    todoContainer.addEventListener('click', (event) => {
+        event.stopPropagation();
+
+        expandedTodo.classList.toggle('expanded-todo-hidden');
+        todoOverlay.classList.toggle('overlay-on');
+        const todoElement = event.target.closest('.todo-container');
+        const todoTitle = todoElement.querySelector('.todo-title').textContent;
+        
+        createTodo.todos.forEach((todo) => {
+            if (todo.title === todoTitle) {
+                createExpandedTodo(expandedTodo, todo, todoOverlay)
+            }
+        })
+    });
+
+    todoOverlay.addEventListener('click', (event) => {
+        event.stopPropagation();
+        
+        if(event.target.classList.contains('overlay')) {
+            expandedTodo.classList.add('expanded-todo-hidden');
+            todoOverlay.classList.toggle('overlay-on');
+        }
+    });
+}
 
 // Removes todo from display and the todos array
 function removeTodo(todo, todoContainer) {
@@ -126,8 +198,8 @@ function displayProjectForm() {
         projectOverlay.classList.toggle('overlay-on')
     });
 
-    projectOverlay.addEventListener('click', (e) => {
-        if (e.target.classList.contains('overlay-on')) {
+    projectOverlay.addEventListener('click', (event) => {
+        if (event.target.classList.contains('overlay-on')) {
             formContainer.classList.add('form-hidden');
             projectOverlay.classList.toggle('overlay-on');            
         }        

@@ -1,5 +1,6 @@
 class createTodo {
     static todos = [];
+    
   
     constructor(todoProject, title, description, dueDate, notes, priority) {
         this.todoProject = todoProject;

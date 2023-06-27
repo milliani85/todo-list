@@ -63,7 +63,7 @@ footer {
 
 .create-todo-container:hover {
   transform: scale(1.1);
-  cursor: pointer;
+  /* cursor: pointer; */
 }
 
 .create-todo-container h5 {
@@ -81,7 +81,7 @@ footer {
 
 .main-list-container:hover {
   transform: scale(1.1);
-  cursor: pointer;
+  /* cursor: pointer; */
 }
 
 .main-list-container h5 {
@@ -105,7 +105,7 @@ footer {
 
 .create-project-container:hover {
   transform: scale(1.1);
-  cursor: pointer;
+  /* cursor: pointer; */
 }
 
 .todo-container {
@@ -168,7 +168,7 @@ footer {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  z-index: 2;
+  z-index: 3;
   border: solid 0.5px rgb(94, 94, 94);
   border-radius: 15px;
   background-color: white;
@@ -327,7 +327,7 @@ footer {
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
-  cursor: pointer;
+  /* cursor: pointer; */
   margin: 0 auto;
   display: block;
   transition: transform 0.1s ease-in-out;
@@ -344,7 +344,7 @@ footer {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  z-index: 2;
+  z-index: 3;
   border: solid 0.5px rgb(94, 94, 94);
   border-radius: 15px;
   background-color: white;
@@ -373,5 +373,24 @@ footer {
 
 .project-list:hover {
   transform: scale(1.1);
-  cursor: pointer;
+  /* cursor: pointer; */
+}
+
+.expanded-todo {
+  width: 25%;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+  border: solid 0.5px rgb(94, 94, 94);
+  border-radius: 15px;
+  background-color: white;
+  padding: 20px;
+  opacity: 0;
+  animation: fadeIn 0.5s forwards;
+}
+
+.expanded-todo-hidden {
+  display: none;
 }
