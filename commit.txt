@@ -1,8 +1,1 @@
-﻿Fixed bug causing duplicated projects with assigned todos and added Project list styling and filtering functionality
-
-
--Resolved bug that caused duplication of projects with assigned todos in the array of all projects and on the display.
-
--Implemented styling for the Project list in the navigation bar, enhancing the visual presentation.
-
--Developed functionality to enable clicking on a project in the Project list, resulting in filtered todos being displayed in the main todo area.
+﻿Add functionality for ID reference between UI todo and object todo and also todo title editing
